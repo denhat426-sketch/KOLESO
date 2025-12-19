@@ -1,69 +1,62 @@
-// script.js
-let submitCount = 0;
-const maxSubmit = 10000;
-const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
-const CHAT_ID = "8090040629";
-
-function sendForm(e) {
-  e.preventDefault();
-
-  if (submitCount >= maxSubmit) {
-    alert("Siz maksimal 3 marta yuborishingiz mumkin!");
-    return;
-  }
-
-  const name = document.querySelector('input[name="name"]').value;
-  const phone = document.querySelector('input[name="phone"]').value;
-  const carModel = document.querySelector('input[name="carModel"]').value;
-  const carNumber = document.querySelector('input[name="carNumber"]').value;
-
-  let services = [];
-  document.querySelectorAll('input[name="service[]"]:checked')
-    .forEach(item => services.push(item.value));
-
-  if (services.length === 0) {
-    alert("Kamida bitta xizmat tanlang");
-    return;
-  }
-
-  const date = document.querySelector('input[name="date"]').value;
-  const time = document.querySelector('input[name="time"]').value;
-
-  const text =
-    `🛞 Yangi yozilish (KOLESO)\n\n` +
-    `👤 Ism: ${name}\n` +
-    `📞 Telefon: ${phone}\n` +
-    `🚗 Mashina: ${carModel}\n` +
-    `🔢 Raqami: ${carNumber}\n` +
-    `🔧 Xizmatlar: ${services.join(", ")}\n` +
-    `📅 Sana: ${date}\n` +
-    `⏰ Vaqt: ${time}`;
-
-  const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: text
-    })
-  })
-  .then(() => {
-    submitCount++;
-    alert(`Yuborildi! Siz ${submitCount}/${maxSubmit} marta yubordingiz.`);
-  })
-  .catch(() => alert("Xatolik! Qayta urinib ko‘ring."));
-}
-
 function openCall() {
-  document.getElementById("callModal").style.display = "flex";
-}
-
-function closeCall() {
-  document.getElementById("callModal").style.display = "none";
-}
-
-function scrollToForm() {
-  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
-}
+    document.getElementById("callModal").style.display = "flex";
+  }
+  function closeCall() {
+    document.getElementById("callModal").style.display = "none";
+  }
+  function scrollToForm() {
+    document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+  }
+  function sendForm(e) {
+    e.preventDefault();
+    alert("So‘rov yuborildi! Tez orada bog‘lanamiz.");
+  }
+  const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
+  const CHAT_ID = "8090040629";
+  
+  function sendForm(e) {
+    e.preventDefault();
+  
+    const name = document.querySelector('input[name="name"]').value;
+    const phone = document.querySelector('input[name="phone"]').value;
+    const carModel = document.querySelector('input[name="carModel"]').value;
+    const carNumber = document.querySelector('input[name="carNumber"]').value;
+    const date = document.querySelector('input[name="date"]').value;
+    const time = document.querySelector('input[name="time"]').value;
+  
+    let services = [];
+    document.querySelectorAll('input[name="service[]"]:checked')
+      .forEach(item => services.push(item.value));
+  
+    if (services.length === 0) {
+      alert("Kamida bitta xizmat tanlang!");
+      return;
+    }
+  
+    const text =
+      `🛞 Yangi yozilish (KOLESO)\n\n` +
+      `👤 Ism: ${name}\n` +
+      `📞 Telefon: ${phone}\n` +
+      `🚗 Mashina: ${carModel}\n` +
+      `🔢 Raqami: ${carNumber}\n` +
+      `🔧 Xizmatlar: ${services.join(", ")}\n` +
+      `📅 Sana: ${date}\n` +
+      `⏰ Vaqt: ${time}`;
+  
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text
+      })
+    })
+    .then(() => {
+      alert("✅ Yuborildi! Tez orada bog‘lanamiz.");
+      document.querySelector("form").reset(); // forma tozalanadi
+    })
+    .catch(() => {
+      alert("❌ Xatolik! Qayta urinib ko‘ring.");
+    });
+  }
+  
