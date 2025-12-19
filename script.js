@@ -15,7 +15,7 @@ function openCall() {
 const CHAT_ID = "8090040629";
 
 function sendForm(e) {
-  e.preventDefault(); // sahifa yangilanmasin
+  e.preventDefault();
 
   const name = document.querySelector('input[name="name"]').value;
   const phone = document.querySelector('input[name="phone"]').value;
@@ -29,11 +29,17 @@ function sendForm(e) {
     return;
   }
 
+  // Sana va vaqt
+  const date = document.querySelector('input[name="date"]').value;
+  const time = document.querySelector('input[name="time"]').value;
+
   const text =
     `🛞 Yangi yozilish (KOLESO)\n\n` +
     `👤 Ism: ${name}\n` +
     `📞 Telefon: ${phone}\n` +
-    `🔧 Xizmatlar: ${services.join(", ")}`;
+    `🔧 Xizmatlar: ${services.join(", ")}\n` +
+    `📅 Sana: ${date}\n` +
+    `⏰ Vaqt: ${time}`;
 
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
@@ -45,10 +51,6 @@ function sendForm(e) {
       text: text
     })
   })
-  .then(() => {
-    alert("Yuborildi! Tez orada bog‘lanamiz.");
-  })
-  .catch(() => {
-    alert("Xatolik! Qayta urinib ko‘ring.");
-  });
+  .then(() => alert("Yuborildi! Tez orada bog‘lanamiz."))
+  .catch(() => alert("Xatolik! Qayta urinib ko‘ring."));
 }
