@@ -73,25 +73,26 @@
     <input type="text" name="name" placeholder="Ismingiz" required>
     <input type="tel" name="phone" placeholder="Telefon raqam" required>
   
-    <!-- Bu yerga mashina modeli datalist qo‘shamiz -->
-    <input list="carModels" name="carModel" placeholder="Mashina modeli" required>
-    <datalist id="carModels">
-      <option value="Cobalt">
-      <option value="Nexia 1">
-      <option value="Nexia 2">
-      <option value="Aveo">
-      <option value="Gentra">
-      <option value="Damas">
-      <option value="Labo">
-    </datalist>
-  
+    <!-- Mashina modeli va raqami -->
+    <input type="text" name="carModel" placeholder="Mashina modeli" required>
     <input type="text" name="carNumber" placeholder="Mashina raqami" required>
   
-    <!-- Xizmatlar -->
-    <label><input type="checkbox" name="service[]" value="Balansirovka">Balansirovka</label>
-    <label><input type="checkbox" name="service[]" value="Diskka terish">Diskka terish</label>
-    <label><input type="checkbox" name="service[]" value="Razval-sxajdeniya">Razval – sxajdeniya</label>
-    <label><input type="checkbox" name="service[]" value="Hada voy (ходовой)">Hada voy (ходовой)</label>
+    <label>
+      <input type="checkbox" name="service[]" value="Balansirovka">
+      Balansirovka
+    </label>
+    <label>
+      <input type="checkbox" name="service[]" value="Diskka terish">
+      Diskka terish
+    </label>
+    <label>
+      <input type="checkbox" name="service[]" value="Razval-sxajdeniya">
+      Razval – sxajdeniya
+    </label>
+    <label>
+      <input type="checkbox" name="service[]" value="Hada voy (ходовой)">
+      Hada voy (ходовой)
+    </label>
   
     <!-- Sana va vaqt -->
     <input type="date" name="date" required>
@@ -99,7 +100,6 @@
   
     <button type="submit">YUBORISH</button>
   </form>
-  
   
   
   
