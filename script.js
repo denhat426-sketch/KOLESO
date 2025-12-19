@@ -1,6 +1,6 @@
 // script.js
 let submitCount = 0;
-const maxSubmit = 3;
+const maxSubmit = 10000;
 const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
 const CHAT_ID = "8090040629";
 
