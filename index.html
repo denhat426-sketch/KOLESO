@@ -12,6 +12,31 @@
 </head>
 <body>
 
+<!-- INSTAGRAM REDIRECT OVERLAY -->
+<div id="igRedirect" style="
+display:none;
+position:fixed;
+inset:0;
+background:#000000e6;
+color:#fff;
+z-index:9999;
+text-align:center;
+padding:40vh 20px;">
+  <h2>⚠️ Instagram cheklovi</h2>
+  <p>Yozilish ishlashi uchun saytni brauzerda oching</p><br>
+  <button onclick="openBrowser()" style="
+    padding:14px 22px;
+    font-size:16px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;">
+    🌐 Brauzerda ochish
+  </button>
+  <p style="margin-top:15px;font-size:13px;">
+    Agar ochilmasa: yuqoridagi <b>⋮</b> → <b>Open in browser</b>
+  </p>
+</div>
+
 <header>
   <div class="logo">🛞 KOLESO</div>
   <button class="call-btn" onclick="openCall()">📞 Qo‘ng‘iroq</button>
@@ -26,10 +51,6 @@
 
 <section class="booking" id="booking">
   <h2>Onlayn yozilish</h2>
-
-  <div id="igWarning" style="display:none;background:#ffcc00;padding:10px;margin-bottom:10px;text-align:center;">
-    ⚠️ To‘liq ishlashi uchun Chrome yoki Safari’da oching
-  </div>
 
   <form id="bookingForm">
     <input type="text" name="name" placeholder="Ismingiz" required>
@@ -63,9 +84,14 @@
 </div>
 
 <script>
-/* Instagram tekshirish */
+/* Instagram aniqlash */
 if (navigator.userAgent.toLowerCase().includes("instagram")) {
-  document.getElementById("igWarning").style.display = "block";
+  document.getElementById("igRedirect").style.display = "block";
+}
+
+/* Brauzerga ochish */
+function openBrowser(){
+  window.open(window.location.href, "_blank");
 }
 
 /* Modal */
@@ -79,7 +105,7 @@ function scrollToForm(){
   document.getElementById("booking").scrollIntoView({behavior:"smooth"});
 }
 
-/* Telegram yuborish */
+/* Telegram yuborish (FAFAQAT BRAUZERDA ISHLAYDI) */
 const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
 const CHAT_ID = "8090040629";
 
@@ -88,7 +114,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
   const form = e.target;
   const services = [...form.querySelectorAll('input[name="service"]:checked')]
-                  .map(i => i.value);
+    .map(i => i.value);
 
   if (!services.length) {
     alert("Kamida bitta xizmat tanlang!");
@@ -106,16 +132,16 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 📅 Sana: ${form.date.value}
 ⏰ Vaqt: ${form.time.value}`;
 
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body:JSON.stringify({ chat_id:CHAT_ID, text })
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id: CHAT_ID, text })
   })
-  .then(()=>{
+  .then(() => {
     alert("✅ Yuborildi! Tez orada bog‘lanamiz");
     form.reset();
   })
-  .catch(()=>{
+  .catch(() => {
     alert("❌ Xatolik! Qayta urinib ko‘ring");
   });
 });
