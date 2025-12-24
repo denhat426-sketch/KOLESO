@@ -1,151 +1,88 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KOLESO | Shinomontaj Asaka</title>
-
-  <meta name="description" content="KOLESO ustaxonasi: balansirovka, diska terish, razval sxajdeniya. Andijon viloyati, Asaka tuman.">
-  <meta name="keywords" content="KOLESO, balansirovka, diska terish, razval, Asaka, Andijon">
-
+  <title>KOLESO - Avto xizmatlar</title>
+  <meta name="description"
+    content="KOLESO ustaxonasi: balansirovka, diska terish, razval sxajdeniya. Andijon viloyati, Asaka tuman.">
+  <meta name="keywords" content="KOLESO, balansirovka, diska terish, razval, Asaka, Andijon, ustxona">
+  <title>KOLESO - Avto xizmatlar</title>
+  <meta name="description"
+    content="KOLESO ustaxonasi: balansirovka, diska terish, razval sxajdeniya. Andijon viloyati, Asaka tuman.">
+  <meta name="keywords" content="KOLESO, balansirovka, diska terish, razval, Asaka, Andijon, ustxona">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-<!-- INSTAGRAM REDIRECT OVERLAY -->
-<div id="igRedirect" style="
-display:none;
-position:fixed;
-inset:0;
-background:#000000e6;
-color:#fff;
-z-index:9999;
-text-align:center;
-padding:40vh 20px;">
-  <h2>⚠️ Instagram cheklovi</h2>
-  <p>Yozilish ishlashi uchun saytni brauzerda oching</p><br>
-  <button onclick="openBrowser()" style="
-    padding:14px 22px;
-    font-size:16px;
-    border-radius:10px;
-    border:none;
-    cursor:pointer;">
-    🌐 Brauzerda ochish
-  </button>
-  <p style="margin-top:15px;font-size:13px;">
-    Agar ochilmasa: yuqoridagi <b>⋮</b> → <b>Open in browser</b>
-  </p>
-</div>
-
-<header>
-  <div class="logo">🛞 KOLESO</div>
-  <button class="call-btn" onclick="openCall()">📞 Qo‘ng‘iroq</button>
-</header>
-
-<section class="hero">
-  <h1>KOLESO — Shinomontaj va Avtoservis</h1>
-  <p>Tez • Sifatli • Ishonchli xizmat</p>
-  <p class="address">📍 Andijon viloyati, Asaka tumani, Lag‘mani yonida</p>
-  <button class="main-btn" onclick="scrollToForm()">ONLAYN YOZILISH</button>
-</section>
-
-<section class="booking" id="booking">
-  <h2>Onlayn yozilish</h2>
-
-  <form id="bookingForm">
-    <input type="text" name="name" placeholder="Ismingiz" required>
-    <input type="tel" name="phone" placeholder="Telefon raqam" required>
-    <input type="text" name="carModel" placeholder="Mashina modeli" required>
-    <input type="text" name="carNumber" placeholder="Mashina raqami" required>
-
-    <label><input type="checkbox" name="service" value="Balansirovka"> Balansirovka</label>
-    <label><input type="checkbox" name="service" value="Diskka terish"> Diskka terish</label>
-    <label><input type="checkbox" name="service" value="Razval-sxajdeniya"> Razval – sxajdeniya</label>
-    <label><input type="checkbox" name="service" value="Hada voy"> Hada voy</label>
-
-    <input type="date" name="date" required>
-    <input type="time" name="time" required>
-
-    <button type="submit">YUBORISH</button>
-  </form>
-</section>
-
-<footer>
-  <p>📞 88027 1711</p>
-  <p>© 2025 KOLESO | Asaka</p>
-</footer>
-
-<div class="call-modal" id="callModal">
-  <div class="call-box">
-    <h2>📞 Qo‘ng‘iroq qiling</h2>
-    <a href="https://wa.me/998880271711" target="_blank">WhatsApp orqali</a>
-    <button onclick="closeCall()">Yopish</button>
+  <header>
+    <div class="logo">🛞 KOLESO</div> <button class="call-btn" onclick="openCall()">📞 Qo‘ng‘iroq</button>
+  </header> <!-- HERO -->
+  <section class="hero">
+    <h1>KOLESO — Shinomontaj va Avtoservis</h1>
+    <p>Tez • Sifatli • Ishonchli xizmat</p>
+    <p class="address">📍 Andijon viloyati, Asaka tumani, Lag‘mani yonida</p> <button class="main-btn"
+      onclick="scrollToForm()">ONLAYN YOZILISH</button>
+  </section> <!-- NEGA BIZ -->
+  <section class="why">
+    <h2>Nega aynan KOLESO?</h2>
+    <div class="why-grid">
+      <div>✅ Tajribali ustalar</div>
+      <div>✅ Zamonaviy uskunalar</div>
+      <div>✅ Halol va tez xizmat</div>
+      <div>✅ Qulay narxlar</div>
+      <div>✅ Mijoz roziligi birinchi o‘rinda</div>
+      <div>✅ Asakada qulay joylashuv</div>
+    </div>
+  </section> <!-- XIZMATLAR -->
+  <section class="services">
+    <h2>Bizning xizmatlar</h2>
+    <div class="service-box">
+      <h3>⚙️ Balansirovka</h3>
+      <p>G‘ildiraklarni aniq balanslash, titrashsiz yurish.</p>
+    </div>
+    <div class="service-box">
+      <h3>🛞 Diskka terish</h3>
+      <p>Shinalarni diskka professional o‘rnatish va yechish.</p>
+    </div>
+    <div class="service-box">
+      <h3>🚗 Razval – sxajdeniya</h3>
+      <p>G‘ildirak burchaklarini sozlash, shina kam yeyiladi.</p>
+    </div>
+    <div class="service-box">
+      <h3>🔩 Hada voy (ходовой)</h3>
+      <p>Yurish qismi diagnostikasi va ta’miri.</p>
+    </div>
+  </section> <!-- ONLAYN YOZILISH -->
+  <section class="booking" id="booking">
+    <h2>Onlayn yozilish</h2>
+    <form onsubmit="sendForm(event)"> <input type="text" name="name" placeholder="Ismingiz" required> <input type="tel"
+        name="phone" placeholder="Telefon raqam" required> <!-- Mashina modeli va raqami --> <input type="text"
+        name="carModel" placeholder="Mashina modeli" required> <input type="text" name="carNumber"
+        placeholder="Mashina raqami" required> <label> <input type="checkbox" name="service[]" value="Balansirovka">
+        Balansirovka </label> <label> <input type="checkbox" name="service[]" value="Diskka terish"> Diskka terish
+      </label> <label> <input type="checkbox" name="service[]" value="Razval-sxajdeniya"> Razval – sxajdeniya </label>
+      <label> <input type="checkbox" name="service[]" value="Hada voy (ходовой)"> Hada voy (ходовой) </label>
+      <!-- Sana va vaqt --> <input type="date" name="date" required> <input type="time" name="time" required> <button
+        type="submit">YUBORISH</button> </form>
+  </section> <!-- XARITA -->
+  <section class="map">
+    <h2>Bizni xaritada toping</h2> <iframe
+      src="https://www.google.com/maps?q=M725%2BG97%2C%20Asaka%2C%20Andijan%20Region&output=embed" width="100%"
+      height="350" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"> </iframe>
+  </section>
+  <footer>
+    <p>📞 88027 1711</p>
+    <p>© 2025 KOLESO | Asaka</p>
+  </footer> <!-- CALL MODAL -->
+  <div class="call-modal" id="callModal">
+    <div class="call-box">
+      <h2>📞 Qo‘ng‘iroq qiling</h2> <a href="tel:880271711">88027 1711</a> <button onclick="closeCall()">Yopish</button>
+    </div>
   </div>
-</div>
-
-<script>
-/* Instagram aniqlash */
-if (navigator.userAgent.toLowerCase().includes("instagram")) {
-  document.getElementById("igRedirect").style.display = "block";
-}
-
-/* Brauzerga ochish */
-function openBrowser(){
-  window.open(window.location.href, "_blank");
-}
-
-/* Modal */
-function openCall(){
-  document.getElementById("callModal").style.display = "flex";
-}
-function closeCall(){
-  document.getElementById("callModal").style.display = "none";
-}
-function scrollToForm(){
-  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
-}
-
-/* Telegram yuborish (FAFAQAT BRAUZERDA ISHLAYDI) */
-const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
-const CHAT_ID = "8090040629";
-
-document.getElementById("bookingForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const form = e.target;
-  const services = [...form.querySelectorAll('input[name="service"]:checked')]
-    .map(i => i.value);
-
-  if (!services.length) {
-    alert("Kamida bitta xizmat tanlang!");
-    return;
-  }
-
-  const text =
-`🛞 Yangi yozilish (KOLESO)
-
-👤 Ism: ${form.name.value}
-📞 Telefon: ${form.phone.value}
-🚗 Mashina: ${form.carModel.value}
-🔢 Raqami: ${form.carNumber.value}
-🔧 Xizmatlar: ${services.join(", ")}
-📅 Sana: ${form.date.value}
-⏰ Vaqt: ${form.time.value}`;
-
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id: CHAT_ID, text })
-  })
-  .then(() => {
-    alert("✅ Yuborildi! Tez orada bog‘lanamiz");
-    form.reset();
-  })
-  .catch(() => {
-    alert("❌ Xatolik! Qayta urinib ko‘ring");
-  });
-});
-</script>
-
+  <script src="script.js"></script>
 </body>
+
 </html>
