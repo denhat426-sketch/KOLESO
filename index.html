@@ -4,40 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KOLESO | Shinomontaj Asaka</title>
-  <meta name="description"
-    content="KOLESO ustaxonasi: balansirovka, diska terish, razval sxajdeniya. Andijon viloyati, Asaka tuman.">
-  <meta name="keywords" content="KOLESO, balansirovka, diska terish, razval, Asaka, Andijon, ustxona">
-  <link rel="stylesheet" href="style.css">
+
+  <meta name="description" content="KOLESO ustaxonasi: balansirovka, diska terish, razval sxajdeniya. Asaka, Andijon.">
+  <meta name="keywords" content="KOLESO, shinomontaj, balansirovka, Asaka">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+    body{background:#000;color:#fff}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:15px 20px;background:#111
+    }
+    .logo{color:#FFD700;font-size:24px;font-weight:bold}
+
+    .call-btn,.main-btn,button{
+      background:#FFD700;color:#000;
+      padding:12px 18px;
+      border-radius:8px;
+      font-weight:bold;
+      text-decoration:none;
+      border:none;
+      display:inline-block;
+      cursor:pointer
+    }
+
+    .hero{text-align:center;padding:70px 20px}
+    .hero h1{color:#FFD700;font-size:34px}
+    .address{color:#ccc;margin-top:10px}
+
+    section{padding:50px 20px}
+    h2{text-align:center;color:#FFD700;margin-bottom:30px}
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px
+    }
+    .why-grid div{
+      border:1px solid #FFD700;
+      padding:20px;border-radius:8px;background:#111
+    }
+
+    .services{background:#111}
+    .service-box{
+      border:1px solid #FFD700;
+      padding:20px;border-radius:8px;margin-bottom:15px
+    }
+
+    .booking form{
+      max-width:400px;margin:0 auto;
+      display:flex;flex-direction:column;gap:15px
+    }
+    .booking input{
+      padding:12px;border-radius:6px;border:none
+    }
+
+    label{
+      background:#111;
+      border:1px solid #FFD700;
+      padding:10px;border-radius:6px;
+      display:block
+    }
+
+    footer{
+      text-align:center;padding:20px;
+      background:#111;color:#aaa
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">🛞 KOLESO</div>
-  <button class="call-btn" onclick="openCall()">📞 Qo‘ng‘iroq</button>
+  <a href="tel:880271711" class="call-btn">📞 Qo‘ng‘iroq</a>
 </header>
 
 <section class="hero">
   <h1>KOLESO — Shinomontaj va Avtoservis</h1>
-  <p>Tez • Sifatli • Ishonchli xizmat</p>
-  <p class="address">📍 Andijon viloyati, Asaka tumani, Lag‘mani yonida</p>
-  <button class="main-btn" onclick="scrollToForm()">ONLAYN YOZILISH</button>
+  <p>Tez • Sifatli • Ishonchli</p>
+  <p class="address">📍 Andijon viloyati, Asaka tumani</p>
+  <br>
+  <a href="#booking" class="main-btn">ONLAYN YOZILISH</a>
 </section>
 
 <section class="why">
-  <h2>Nega aynan KOLESO?</h2>
+  <h2>Nega KOLESO?</h2>
   <div class="why-grid">
     <div>✅ Tajribali ustalar</div>
     <div>✅ Zamonaviy uskunalar</div>
-    <div>✅ Halol va tez xizmat</div>
+    <div>✅ Tez xizmat</div>
     <div>✅ Qulay narxlar</div>
-    <div>✅ Mijoz roziligi</div>
-    <div>✅ Asakada qulay joy</div>
   </div>
 </section>
 
 <section class="services">
-  <h2>Bizning xizmatlar</h2>
+  <h2>Xizmatlar</h2>
   <div class="service-box">⚙️ Balansirovka</div>
   <div class="service-box">🛞 Diskka terish</div>
   <div class="service-box">🚗 Razval – sxajdeniya</div>
@@ -46,27 +109,23 @@
 
 <section class="booking" id="booking">
   <h2>Onlayn yozilish</h2>
-  <form onsubmit="sendForm(event)">
+
+  <form id="bookingForm">
     <input type="text" name="name" placeholder="Ismingiz" required>
     <input type="tel" name="phone" placeholder="Telefon raqam" required>
     <input type="text" name="carModel" placeholder="Mashina modeli" required>
     <input type="text" name="carNumber" placeholder="Mashina raqami" required>
 
-    <label><input type="checkbox" name="service[]" value="Balansirovka"> Balansirovka</label>
-    <label><input type="checkbox" name="service[]" value="Diskka terish"> Diskka terish</label>
-    <label><input type="checkbox" name="service[]" value="Razval"> Razval</label>
-    <label><input type="checkbox" name="service[]" value="Hada voy"> Hada voy</label>
+    <label><input type="checkbox" name="service" value="Balansirovka"> Balansirovka</label>
+    <label><input type="checkbox" name="service" value="Diskka terish"> Diskka terish</label>
+    <label><input type="checkbox" name="service" value="Razval"> Razval – sxajdeniya</label>
+    <label><input type="checkbox" name="service" value="Hada voy"> Hada voy</label>
 
     <input type="date" name="date" required>
     <input type="time" name="time" required>
 
     <button type="submit">YUBORISH</button>
   </form>
-  <section class="map">
-    <h2>Bizni xaritada toping</h2> <iframe
-      src="https://www.google.com/maps?q=M725%2BG97%2C%20Asaka%2C%20Andijan%20Region&output=embed" width="100%"
-      height="350" style="border:0;border-radius:10px;" allowfullscreen="" loading="lazy"> </iframe>
-  </section>
 </section>
 
 <footer>
@@ -74,76 +133,44 @@
   <p>© 2025 KOLESO | Asaka</p>
 </footer>
 
-<div class="call-modal" id="callModal">
-  <div class="call-box">
-    <h2>📞 Qo‘ng‘iroq qiling</h2>
-    <a href="tel:880271711">88027 1711</a>
-    <button onclick="closeCall()">Yopish</button>
-  </div>
-</div>
-
-<!-- ✅ JS HTML ICHIDA -->
 <script>
-function openCall() {
-  document.getElementById("callModal").style.display = "flex";
-}
-
-function closeCall() {
-  document.getElementById("callModal").style.display = "none";
-}
-
-function scrollToForm() {
-  document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
-}
-
 const BOT_TOKEN = "8407833063:AAFxav88_1G9S8_2var3Knfx1wG3eG5PH_s";
 const CHAT_ID = "8090040629";
 
-function sendForm(e) {
+document.getElementById("bookingForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const name = document.querySelector('input[name="name"]').value;
-  const phone = document.querySelector('input[name="phone"]').value;
-  const carModel = document.querySelector('input[name="carModel"]').value;
-  const carNumber = document.querySelector('input[name="carNumber"]').value;
-  const date = document.querySelector('input[name="date"]').value;
-  const time = document.querySelector('input[name="time"]').value;
+  const f = e.target;
+  const services = [...f.querySelectorAll('input[name="service"]:checked')]
+                    .map(i => i.value);
 
-  let services = [];
-  document.querySelectorAll('input[name="service[]"]:checked')
-    .forEach(el => services.push(el.value));
-
-  if (services.length === 0) {
+  if(services.length === 0){
     alert("Kamida bitta xizmat tanlang!");
     return;
   }
 
-  const text = `🛞 Yangi yozilish (KOLESO)
+  const text =
+`🛞 Yangi yozilish (KOLESO)
 
-👤 Ism: ${name}
-📞 Telefon: ${phone}
-🚗 Mashina: ${carModel}
-🔢 Raqami: ${carNumber}
+👤 Ism: ${f.name.value}
+📞 Telefon: ${f.phone.value}
+🚗 Mashina: ${f.carModel.value}
+🔢 Raqam: ${f.carNumber.value}
 🔧 Xizmatlar: ${services.join(", ")}
-📅 Sana: ${date}
-⏰ Vaqt: ${time}`;
+📅 Sana: ${f.date.value}
+⏰ Vaqt: ${f.time.value}`;
 
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text: text
-    })
+  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
+    method:"POST",
+    headers:{ "Content-Type":"application/json" },
+    body:JSON.stringify({ chat_id:CHAT_ID, text })
   })
-  .then(() => {
+  .then(()=> {
     alert("✅ Yuborildi! Tez orada bog‘lanamiz.");
-    document.querySelector("form").reset();
+    f.reset();
   })
-  .catch(() => {
-    alert("❌ Xatolik yuz berdi!");
-  });
-}
+  .catch(()=> alert("❌ Xatolik"));
+});
 </script>
 
 </body>
